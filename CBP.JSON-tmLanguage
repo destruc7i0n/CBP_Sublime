@@ -1,0 +1,63 @@
+// Command Block Parser Syntax for Sublime Text
+// (c) TheDestruc7i0n 2015
+// Please don't use any of my regexp or code without permission from me (contact me at http://thedestruc7i0n.ca)
+{   
+	"name": "Command Block Parser",
+	"scopeName": "source.command_block_parser",
+	"fileTypes": ["cbp"],
+	"patterns": [
+		{  
+			"name": "constant.numeric",
+			"match": "~?([+-]?\\d+(\\.\\d+)?)|~"
+		},
+		{
+			"name": "comment.line.double-dash",
+			"match": "^\\s*//.*$"
+		},
+		{  
+			"name": "entity.name.function",
+			"match": "(\\:\\w+)(\\s+)(CLOCK|PULSE|DELAY)(\\s+)(?=(\\d\\s\\d\\s\\d))"
+		},
+		{  
+			"name": "keyword.control",
+			"match": "(^(\\bDEFINE\\b|\\bUNDEFINE\\b|\\bSET\\b|\\bUNSET\\b|\\bIF\\b|\\bFUNC\\b|\\bLOOP\\b|\\bEND\\b|\\bUSE\\b|\\bUNUSE\\b|\\bCONSTART\\b|\\bCONEND\\b|\\bCONDITION\\b)(\\s|$)|^\\bIMPORT\\b\\s)"
+		},
+		{
+			"name": "keyword.operator",
+			"match": "([<>]=?|\\*|-|\\+|\\|)|="
+		},
+		{  
+			"name": "keyword.control",
+			"match": "(\\bSIN|\\bCOS|\\bTAN|\\bCEIL|\\bFLOOR|\\bSQRT|\\bROUND|\\bPOW|\\bMUL|\\bDIV|\\bADD|\\bSUB|\\bMOD|\\bAND|\\bOR|\\bNOT|\\bGRTR|\\bSMLR|\\bEQL|\\bINT|\\bGROUP_VAL|\\bNBT_SET|\\bNBT_REMOVE|\\bESCAPE|\\bCALC|\\bDEF_VALUE|\\bPARSE)(?=\\((.*)\\))"
+		},
+		{  
+			"name": "entity.name.tag",
+		    "match": "(\\bgamemode\\b|\\bentitydata\\b|\\bgive\\b|\\bscoreboard\\b|\\bstats\\b|\\btp\\b|\\bworldborder\\b|\\bkill\\b|\\bspreadplayers\\b|\\bxp\\b|\\bdifficulty\\b|\\bdebug\\b|\\bgamerule\\b|\\bclear\\b|\\bparticle\\b|\\btitle\\b|\\btime\\b|\\bhelp\\b|\\bdefaultgamemode\\b|\\bweather\\b|\\bme\\b|\\btell\\b|\\bpublish\\b|\\breplaceitem\\b|\\bclone\\b|\\btrigger\\b|\\bexecute\\b|\\bachievement\\b|\\btellraw\\b|\\btestforblock\\b|\\bseed\\b|\\bfill\\b|\\bblockdata\\b|\\bplaysound\\b|\\bmsg\\b|\\bspawnpoint\\b|\\bsetblock\\b|\\bw\\b|\\btoggledownfall\\b|\\beffect\\b|\\btestforblocks\\b|\\bsetworldspawn\\b|\\bsay\\b|\\bsummon\\b|\\btestfor\\b|\\benchant)(\\s|$)"
+		},
+		{  
+			"name": "entity.name.tag",
+			"match": "minecraft:\\w+"
+		},
+		{
+			"name": "storage.type",
+			"match": "@[apre]"
+		},
+		{
+			"name": "variable.parameter",
+			"match": "[\\w_]+(?=(<|>)*=(<|>)*[!\\w_])"
+		},
+		{
+			"name": "storage.type",
+			"match": "(?<==|=!)[(\\w|\\d)*_]+"
+		},
+		{
+		  	"name": "variable.parameter",
+		  	"match": "\\d+,\\d+,\\d+,?"
+		},
+		{
+			"name": "string.quoted.double",			
+			"match": "\"([^\"\\\\]*(\\\\.)*)*\""
+		}
+	],
+	"uuid": "4df609d0-76a7-4781-b306-317feeb61b2e"
+}
