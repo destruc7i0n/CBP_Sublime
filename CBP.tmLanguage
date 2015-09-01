@@ -78,6 +78,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>false|true</string>
+			<key>name</key>
+			<string>constant.language</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\d+,\d+,\d+,?</string>
 			<key>name</key>
 			<string>variable.parameter</string>
